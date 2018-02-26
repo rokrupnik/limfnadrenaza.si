@@ -1,0 +1,44 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+
+<header>
+    <div class="inner">
+        <h1 class="page-heading">{{ record.title }}</h1>
+        <p>{{ record.teaser }}</p>
+    </div>
+</header>
+
+<!-- Content -->
+    <div class="wrapper">
+        <div class="inner">
+
+            {#<h3 class="major">{{ record.title }}</h3>#}
+
+            {#{{ record.teaser }}#}
+
+            {{ record.body }}
+
+            {% if record.image is not empty %}
+                <span class="image fit">
+                    <img src="{{ record.image|image }}">
+                </span>
+            {% endif %}
+
+            {% setcontent entries = 'entries/latest/2' %}
+
+            <section class="features">
+                {% for entry in entries %}
+                    <article>
+                        <a class="image"><img src="{{ entry.image|image }}" alt="" /></a>
+                        <h3 class="major">{{ entry.title }}</h3>
+                        <p>{{ entry.teaser|excerpt(200) }}</p>
+                        <a href="{{ entry.link }}" class="special">Learn more</a>
+                    </article>
+                {% endfor %}
+            </section>
+
+        </div>
+    </div>
+
+{% endblock content %}

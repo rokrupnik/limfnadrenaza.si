@@ -1,0 +1,38 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+
+    <header>
+        <div class="inner">
+            <h2>News</h2>
+            <p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+        <div class="wrapper">
+            <div class="inner">
+
+                {% setcontent pages = 'pages/latest/4' allowpaging %}
+
+                <section class="features">
+
+                    {% for page in pages %}
+
+                        <article>
+                            <a class="image"><img src="{{ page.image|image }}" alt="" /></a>
+                            <h3 class="major">{{ page.title }}</h3>
+                            <p>{{ page.teaser|excerpt(100) }}</p>
+                            <a href="{{ page.link }}" class="special">Learn more</a>
+                        </article>
+
+                    {% endfor %}
+
+                </section>
+
+                    {{ pager('', 3, '_pagination.twig') }}
+
+            </div>
+        </div>
+
+{% endblock content %}

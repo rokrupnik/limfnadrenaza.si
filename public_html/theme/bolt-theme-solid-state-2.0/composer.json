@@ -1,0 +1,29 @@
+{
+    "name": "nestordedios/bolt-theme-solid-state",
+    "description": "Solid State - An awesome responsive website template with multiple page layouts and color schemes.",
+    "type": "bolt-theme",
+    "keywords": ["theme", "solid state", "responsive", "awesome", "template"],
+    "require": {
+        "bolt/bolt": "^3.0"
+    },
+    "license": "CCA (Creative Commons Attribution)",
+    "authors": [
+        {
+            "name": "Nestor de Dios Fernandez",
+            "email": "nestordedios@outlook.es"
+        },
+        {
+            "name": "HTML5 UP",
+            "homepage": "www.html5up.net"
+        }
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "screenshots/screenshot1.png",
+            "screenshots/screenshot2.PNG",
+            "screenshots/screenshot3.PNG",
+            "screenshots/screenshot4.PNG",
+            "screenshots/screenshot5.PNG"
+        ]
+    }
+}

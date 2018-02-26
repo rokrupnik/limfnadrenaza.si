@@ -1,0 +1,144 @@
+{% extends 'master.twig' %}
+
+{% block headerClass %}class="alt"{% endblock headerClass %}
+
+{% block banner %}
+<!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            {#<div class="logo"><span class="icon fa-diamond"></span></div>#}
+            {#<h2>Nežin dotik</h2>#}
+            <div class="grid12-6">
+                <img src="/files/logo-krog.png" class="logo">
+            </div>
+            <div class="grid12-6">
+                <p>Je že čas, da naredite nekaj zase?</p>
+                <p>Oglejte si <a href="#page-0" class="animate-scroll">našo ponudbo</a></p>
+            </div>
+        </div>
+    </section>
+{% endblock banner %}
+
+{% block content %}
+
+    {% setcontent firstPages = 'pages' where { groups: 'massage' } %}
+    {% for page in firstPages %}
+
+        {% if loop.first %}
+
+        <!-- One -->
+            <section id="page-0" class="wrapper spotlight style1">
+                <div class="inner">
+                    {% if page.image is not empty %}
+                        {#{{ page.image|popup(276, 276, "r") }}#}
+                        <a href="{{ page.link }}" class="image" title="{{ page.title }}">
+                            <img src="/thumbs/276x276r/{{ page.image }}" width="276" height="276" alt="{{ page.title }}">
+                        </a>
+                    {% endif %}
+                    <div class="content">
+                        <h2 class="major"><a href="{{ page.link }}" class="no-decoration">{{ page.title }}</a></h2>
+                        <p>{{ page.teaser }}</p>
+                        <a href="{{ page.link }}" class="special">Preberite več</a>
+                    </div>
+                </div>
+            </section>
+
+        {% elseif loop.index0 is odd %}
+
+            <!-- odd -->
+            <section id="page-{{ loop.index0 }}" class="wrapper alt spotlight style2">
+                <div class="inner">
+                    {% if page.image is not empty %}
+                        {#{{ page.image|popup(276, 276, "r") }}#}
+                        <a href="{{ page.link }}" class="image" title="{{ page.title }}">
+                            <img src="/thumbs/276x276r/{{ page.image }}" width="276" height="276" alt="{{ page.title }}">
+                        </a>
+                    {% endif %}
+                    <div class="content">
+                        <h2 class="major"><a href="{{ page.link }}" class="no-decoration">{{ page.title }}</a></h2>
+                        <p>{{ page.teaser }}</p>
+                        <a href="{{ page.link }}" class="special">Preberite več</a>
+                    </div>
+                </div>
+            </section>
+
+        {% elseif loop.index0 is even %}
+
+            <!-- even -->
+            <section id="page-{{ loop.index0 }}" class="wrapper spotlight style3">
+                <div class="inner">
+                    {% if page.image is not empty %}
+                        {#{{ page.image|popup(276, 276, "r") }}#}
+                        <a href="{{ page.link }}" class="image" title="{{ page.title }}">
+                            <img src="/thumbs/276x276r/{{ page.image }}" width="276" height="276" alt="{{ page.title }}">
+                        </a>
+                    {% endif %}
+                    <div class="content">
+                        <h2 class="major"><a href="{{ page.link }}" class="no-decoration">{{ page.title }}</a></h2>
+                        <p>{{ page.teaser }}</p>
+                        <a href="{{ page.link }}" class="special">Preberite več</a>
+                    </div>
+                </div>
+            </section>
+
+        {% endif %}
+
+    {% endfor %}
+
+    {% setcontent news = 'entries/latest/4' %}
+    <!-- Four -->
+        {#<section id="four" class="wrapper alt style1">#}
+            {#<div class="inner">#}
+                {#<h2 class="major">Novice</h2>#}
+                {#<p>Tukaj bodo objavljene najnovejše novice.</p>#}
+                {#<section class="features">#}
+
+                    {#{% for item in news %}#}
+                        {#<article>#}
+                            {#<a class="image"><img src="{{ item.image|thumbnail(572, 333, "c") }}" alt="" /></a>#}
+                            {#<h3 class="major">{{ item.title }}</h3>#}
+                            {#<p>{{ item.teaser }}</p>#}
+                            {#<a href="{{ item.link }}" class="special">Learn more</a>#}
+                        {#</article>#}
+                    {#{% endfor %}#}
+
+                {#</section>#}
+                {#<ul class="actions">#}
+                    {#<li><a href="{{ paths.root }}pages" class="button">Poglej vse</a></li>#}
+                {#</ul>#}
+            {#</div>#}
+        {#</section>#}
+        <section id="four" class="wrapper alt style1">
+            <div class="inner">
+                <div class="image-wrapper">
+                    <img src="/files/neza.jpg" width="100%" height="auto" alt="Nežin Dotik - Neža Justin">
+                </div>
+
+                <div class="content">
+                    <h2 class="major">Z vami bom Neža Justin</h2>
+                    <ul>
+                        <li>diplomirana medicinska sestra</li>
+                        <li>limfoterapevtka</li>
+                        <li>maserka</li>
+                    </ul>
+                    {#<section class="features">#}
+
+                        {#{% for item in news %}#}
+                            {#<article>#}
+                                {#<a class="image"><img src="{{ item.image|thumbnail(572, 333, "c") }}" alt="" /></a>#}
+                                {#<h3 class="major">{{ item.title }}</h3>#}
+                                {#<p>{{ item.teaser }}</p>#}
+                                {#<a href="{{ item.link }}" class="special">Learn more</a>#}
+                            {#</article>#}
+                        {#{% endfor %}#}
+
+                    {#</section>#}
+                    <ul class="actions">
+                        <li><a href="{{ paths.root }}page/cenik" class="button">Cenik storitev</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+{% endblock content %}

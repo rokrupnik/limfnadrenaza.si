@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+    Solid State by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Nežin dotik - limfna drenaža in masaže</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="{{ paths.theme }}js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="{{ paths.theme }}css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="{{ paths.theme }}css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="{{ paths.theme }}css/ie8.css" /><![endif]-->
+        {#<link rel="stylesheet" type="text/css" href="{{ paths.theme }}css/magnific-popup.css">#}
+        <link rel="shortcut icon" href="/files/favicon.ico" type="image/x-icon">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114748997-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-114748997-1');
+        </script>
+    </head>
+    <body>
+
+        <!-- Page Wrapper -->
+            <div id="page-wrapper">
+
+                <!-- Header -->
+                    <header id="header" {% block headerClass %}{% endblock headerClass %}>
+                        <h1><a href="{{ paths.root }}">Nežin dotik</a></h1>
+                        <nav>
+                            <a href="#menu">Meni</a>
+                        </nav>
+                    </header>
+
+                <!-- Menu -->
+                    <nav id="menu">
+                        <div class="inner">
+                            <h2>Meni</h2>
+                            <ul class="links">
+                                {{ menu('main', '_menu.twig') }}
+                            </ul>
+                            <a href="#" class="close">Zapri</a>
+                        </div>
+                    </nav>
+
+                {% block banner %}
+                    {# Banner for index.twig #}
+                {% endblock banner %}
+
+                <!-- Wrapper -->
+                    <section id="wrapper">
+
+                    {% block content %}
+
+                        {# Content goes here and is added in extended templates #}
+
+                    {% endblock content %}
+
+                    </section>
+
+                <!-- Footer -->
+                {% block footer %}
+
+                    {% include '_footer.twig' %}
+
+                {% endblock footer %}
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="{{ paths.theme }}js/skel.min.js"></script>
+            <script src="{{ paths.theme }}js/jquery.min.js"></script>
+            <script src="{{ paths.theme }}js/jquery.scrollex.min.js"></script>
+            <script src="{{ paths.theme }}js/util.js"></script>
+            <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+            <script src="{{ paths.theme }}js/main.js"></script>
+            {#<script src="{{ paths.theme }}js/jquery.magnific-popup.min.js"></script>#}
+            {# set up lightbox script here, or do this in your own .js file somewhere #}
+            <script type="text/javascript">
+              $(document).ready(function() {
+                $('.magnific').addClass("image");
+                // $('.magnific').magnificPopup({
+                //     type: 'image',
+                //     closeOnContentClick: true,
+                //     mainClass: 'mfp-img-mobile',
+                //     image: {
+                //         verticalFit: true
+                //     }
+                //     // other options
+                // });
+              });
+            </script>
+
+    </body>
+</html>
